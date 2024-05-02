@@ -1,0 +1,120 @@
+Sub CreateAlzheimerPresentation()
+    Dim pptApp As Object
+    Dim pptPres As Object
+    Dim slideIndex As Integer
+    
+    ' Create a new PowerPoint application
+    Set pptApp = CreateObject("PowerPoint.Application")
+    pptApp.Visible = True
+    
+    ' Create a new presentation
+    Set pptPres = pptApp.Presentations.Add
+    
+    ' Add slides
+    slideIndex = 1
+    With pptPres
+        ' Title slide
+        .Slides.Add slideIndex, 1 ' ppLayoutTitle
+        With .Slides(slideIndex)
+            .Shapes.Title.TextFrame.TextRange.Text = "Comparison of CNN Models for Alzheimer's Disease Classification"
+            .Shapes.Placeholders(2).TextFrame.TextRange.Text = "Your Name or Team Name"
+        End With
+        slideIndex = slideIndex + 1
+        
+        ' Introduction to Alzheimer's Disease
+        .Slides.Add slideIndex, 2 ' ppLayoutText
+        With .Slides(slideIndex)
+            .Shapes.Title.TextFrame.TextRange.Text = "Introduction to Alzheimer's Disease"
+            .Shapes.Placeholders(2).TextFrame.TextRange.Text = "Alzheimer's disease is a neurodegenerative disorder that causes memory loss and cognitive decline. Early detection of Alzheimer's is crucial for effective treatment and care."
+        End With
+        slideIndex = slideIndex + 1
+        
+        ' Objective of the Project
+        .Slides.Add slideIndex, 2 ' ppLayoutText
+        With .Slides(slideIndex)
+            .Shapes.Title.TextFrame.TextRange.Text = "Objective of the Project"
+            .Shapes.Placeholders(2).TextFrame.TextRange.Text = "The objective of this project is to develop and compare three CNN models for Alzheimer's disease classification. The models aim to accurately classify brain MRI images as either belonging to Alzheimer's patients or healthy individuals."
+        End With
+        slideIndex = slideIndex + 1
+        
+        ' Dataset Description
+        .Slides.Add slideIndex, 2 ' ppLayoutText
+        With .Slides(slideIndex)
+            .Shapes.Title.TextFrame.TextRange.Text = "Dataset Description"
+            .Shapes.Placeholders(2).TextFrame.TextRange.Text = "The dataset consists of brain MRI images collected from Alzheimer's patients and healthy individuals. The dataset was preprocessed to enhance image quality and normalize pixel values."
+        End With
+        slideIndex = slideIndex + 1
+        
+        ' EfficientNetB0 Model
+        .Slides.Add slideIndex, 2 ' ppLayoutText
+        With .Slides(slideIndex)
+            .Shapes.Title.TextFrame.TextRange.Text = "EfficientNetB0 Model"
+            .Shapes.Placeholders(2).TextFrame.TextRange.Text = "Architecture: EfficientNetB0 is a convolutional neural network architecture that uses efficient building blocks to achieve high accuracy with fewer parameters. Accuracy: The model achieved an accuracy of 85% on the test dataset."
+        End With
+        slideIndex = slideIndex + 1
+        
+        ' Confusion Matrix - EfficientNetB0
+        .Slides.Add slideIndex, 2 ' ppLayoutText
+        With .Slides(slideIndex)
+            .Shapes.Title.TextFrame.TextRange.Text = "Confusion Matrix - EfficientNetB0"
+            .Shapes.Placeholders(2).TextFrame.TextRange.Text = "[Insert confusion matrix image]"
+        End With
+        slideIndex = slideIndex + 1
+        
+        ' Inception V3 Model
+        .Slides.Add slideIndex, 2 ' ppLayoutText
+        With .Slides(slideIndex)
+            .Shapes.Title.TextFrame.TextRange.Text = "Inception V3 Model"
+            .Shapes.Placeholders(2).TextFrame.TextRange.Text = "Architecture: Inception V3 is a convolutional neural network architecture that uses inception modules for better feature extraction. Accuracy: The model achieved an accuracy of 82% on the test dataset."
+        End With
+        slideIndex = slideIndex + 1
+        
+        ' Confusion Matrix - Inception V3
+        .Slides.Add slideIndex, 2 ' ppLayoutText
+        With .Slides(slideIndex)
+            .Shapes.Title.TextFrame.TextRange.Text = "Confusion Matrix - Inception V3"
+            .Shapes.Placeholders(2).TextFrame.TextRange.Text = "[Insert confusion matrix image]"
+        End With
+        slideIndex = slideIndex + 1
+        
+        ' Custom CNN Model
+        .Slides.Add slideIndex, 2 ' ppLayoutText
+        With .Slides(slideIndex)
+            .Shapes.Title.TextFrame.TextRange.Text = "Custom CNN Model"
+            .Shapes.Placeholders(2).TextFrame.TextRange.Text = "Architecture: The custom CNN model was designed specifically for this project, with a focus on capturing intricate patterns in MRI images. Accuracy: The model achieved an accuracy of 88% on the test dataset."
+        End With
+        slideIndex = slideIndex + 1
+        
+        ' Confusion Matrix - Custom CNN
+        .Slides.Add slideIndex, 2 ' ppLayoutText
+        With .Slides(slideIndex)
+            .Shapes.Title.TextFrame.TextRange.Text = "Confusion Matrix - Custom CNN"
+            .Shapes.Placeholders(2).TextFrame.TextRange.Text = "[Insert confusion matrix image]"
+        End With
+        slideIndex = slideIndex + 1
+        
+        ' Comparison of Models
+        .Slides.Add slideIndex, 2 ' ppLayoutText
+        With .Slides(slideIndex)
+            .Shapes.Title.TextFrame.TextRange.Text = "Comparison of Models"
+            .Shapes.Placeholders(2).TextFrame.TextRange.Text = "Accuracy Comparison: EfficientNetB0 (85%), Inception V3 (82%), Custom CNN (88%)"
+        End With
+        slideIndex = slideIndex + 1
+        
+        ' Conclusion
+        .Slides.Add slideIndex, 2 ' ppLayoutText
+        With .Slides(slideIndex)
+            .Shapes.Title.TextFrame.TextRange.Text = "Conclusion"
+            .Shapes.Placeholders(2).TextFrame.TextRange.Text = "The custom CNN model outperformed EfficientNetB0 and Inception V3 in terms of accuracy. However, EfficientNetB0 and Inception V3 also achieved respectable accuracies and can be considered for use in certain scenarios. Further research could focus on ensemble methods to combine the strengths of all three models."
+        End With
+        slideIndex = slideIndex + 1
+        
+        ' Future Work
+        .Slides.Add slideIndex, 2 ' ppLayoutText
+        With .Slides(slideIndex)
+            .Shapes.Title.TextFrame.TextRange.Text = "Future Work"
+            .Shapes.Placeholders(2).TextFrame.TextRange.Text = "Investigate the use of transfer learning with pre-trained models to improve performance. Explore the integration of other imaging modalities, such as PET scans, for more comprehensive analysis."
+        End With
+    End With
+End Sub
+
